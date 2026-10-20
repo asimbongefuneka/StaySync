@@ -1,0 +1,225 @@
+:root {
+    --bg-color: #f4f6f2;
+    --surface-color: #ffffff;
+    --surface-soft: #edf4ef;
+    --header-color: #1f2b27;
+    --header-accent: #2d5f4b;
+    --text-color: #18211d;
+    --muted-color: #4c5d57;
+    --border-color: #dfe8e2;
+    --shadow: 0 18px 38px rgba(24, 33, 29, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #f4f6f2 0%, #eef3ee 100%);
+    color: var(--text-color);
+}
+
+header {
+    background: linear-gradient(135deg, #1f2b27 0%, #2a3f35 100%);
+    color: white;
+    padding: 28px 20px 18px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 10px;
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    letter-spacing: 0.04em;
+}
+
+header p {
+    margin: 0 auto 16px;
+    max-width: 720px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.2s ease;
+}
+
+nav ul li a:hover {
+    opacity: 0.8;
+}
+
+.section {
+    display: none;
+    padding: 30px 20px;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+}
+
+.provider-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.provider-card {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.provider-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #d9d9d9;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.provider-card h3 {
+    margin: 10px 0 8px;
+}
+
+.provider-card p {
+    margin: 6px 0;
+    color: var(--muted-color);
+}
+
+main.no-overlay {
+    min-height: calc(100vh - 180px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px 30px;
+}
+
+#log,
+#sign {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-box {
+    width: min(100%, 430px);
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 30px 28px;
+    box-shadow: var(--shadow);
+}
+
+.form-box h2 {
+    margin: 0 0 10px;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--header-color);
+}
+
+.form-message {
+    min-height: 20px;
+    margin: 0 0 18px;
+    text-align: center;
+    color: var(--header-accent);
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--muted-color);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    margin-bottom: 16px;
+    background: #f9fbfa;
+    color: var(--text-color);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    border-color: var(--header-accent);
+    box-shadow: 0 0 0 4px rgba(45, 95, 75, 0.12);
+}
+
+input[type="submit"],
+.form-box button {
+    background: linear-gradient(135deg, var(--header-accent), #3a7a5d);
+    color: white;
+    border: none;
+    border-radius: 999px;
+    padding: 12px 18px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 8px 18px rgba(45, 95, 75, 0.25);
+}
+
+input[type="submit"]:hover,
+.form-box button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 22px rgba(45, 95, 75, 0.3);
+}
+
+.form-box p {
+    margin: 20px 0 0;
+    text-align: center;
+    color: var(--muted-color);
+}
+
+.form-box a {
+    color: var(--header-accent);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    background: #1d2a27;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 16px 12px;
+}
+
+@media (max-width: 768px) {
+    .provider-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-box {
+        padding: 24px 18px;
+    }
+}
